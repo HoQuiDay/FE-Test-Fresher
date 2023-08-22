@@ -1,0 +1,73 @@
+.App {
+  padding: 40px;
+  font-size: 14px;
+  background-color: #282c34;
+  display: flex;
+  justify-content: space-between;
+  min-height: 800px;
+  height: 100%;
+  .content-left {
+    width: 70%;
+    padding: 10px;
+    color: white;
+    .show-hide-form {
+      cursor: pointer;
+    }
+  }
+
+  .content-right {
+    width: 30%;
+    padding: 10px;
+    color: white;
+    .show-hide-form {
+      cursor: pointer;
+    }
+  }
+}
+.App-header {
+  /* min-height            : 100vh; */
+  /* display            : flex;
+  flex-direction        : column;
+  align-items           : center; */
+  /* justify-content    : center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  span {
+    color: red;
+    font-size: 18px;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.input-product {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.input-product input {
+  width: 60%;
+  height: 24px;
+  outline: none;
+  border-radius: 3px;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}

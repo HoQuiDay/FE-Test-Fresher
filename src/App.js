@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
+import AddNewProduct from './components/AddNewProduct';
+import Nav from './components/Navigation/Nav';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Product from './components/Products/Product';
+import Weather from './components/Weather/Weather';
+import OtpApp from './components/OTP App/OtpApp';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Nav />
+        <Route
+          path='/'
+          exact>
+          <div className='App'>
+            <div className='content-left'>
+              <Product />
+            </div>
+            <div className='content-right'>
+              <AddNewProduct />
+            </div>
+          </div>
+        </Route>
+        <Switch>
+          <Route path='/product'>
+            <Product />
+          </Route>
+          <Route path='/weather'>
+            <Weather />
+          </Route>
+          <Route path='/otp'>
+            <OtpApp />
+          </Route>
+          <Route path='*'>
+            <div>
+              <h1>NOT FOUND</h1>
+            </div>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
